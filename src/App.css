@@ -1,4 +1,84 @@
 .App {
-    font-family: sans-serif;
-    margin: 0 30px;
+  font-family: sans-serif;
+  margin: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.bottom {
+  margin: 0 -30px;
+  padding: 10px 30px;
+  background: #333;
+  color: #FFF;
+}
+
+.genderList {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.genderList .genderEntry {
+  display: flex;
+  border: 1px solid black;
+  border-top: none;
+  cursor: pointer;
+}
+
+.genderList .genderEntry:first-child {
+  border-top: 1px solid black;
+}
+
+.genderList .genderEntry.selected {
+  background: #dbf5e9;
+}
+
+.genderList .genderEntry.disabled {
+  background: #EEE;
+  font-style: italic;
+  cursor: not-allowed;
+}
+
+.genderList .genderEntry div.radioButton {
+  flex: 0 0 40px;
+  box-sizing: border-box;
+  height: 40px;
+  margin: 5px;
+  position: relative;
+  border: 3px solid black;
+  border-radius: 50%;
+  background: #FFF;
+}
+
+.genderList .genderEntry div.radioButton.checked::before {
+  content: "";
+  position: absolute;
+  background: #32b67a;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+}
+
+.genderList .genderEntry div.radioButton.checked::after {
+  content: "";
+  position: absolute;
+  background: transparent;
+  width: 15px;
+  height: 8px;
+  border: 4px white solid;
+  border-top: none;
+  border-right: none;
+  top: 9px;
+  left: 7px;
+  transform: rotate(-45deg);
+}
+
+.genderList .genderEntry div.label {
+  padding: 13px; /*(50-24)/2*/
+  line-height: 24px;
+  font-size: 20px;
 }
