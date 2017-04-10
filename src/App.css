@@ -8,7 +8,7 @@
 }
 
 .bottom {
-  margin: 0 -30px;
+  margin: 10px -30px 0;
   padding: 10px 30px;
   background: #333;
   color: #FFF;
@@ -16,6 +16,7 @@
 
 .genderList {
   width: 400px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -50,30 +51,29 @@
   border: 3px solid black;
   border-radius: 50%;
   background: #FFF;
+  padding: 2px;
 }
 
 .genderList .genderEntry div.radioButton.checked::before {
   content: "";
-  position: absolute;
   background: #32b67a;
-  width: 28px;
-  height: 28px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  top: 3px;
-  left: 3px;
+  display: inline-block;
 }
 
 .genderList .genderEntry div.radioButton.checked::after {
   content: "";
   position: absolute;
   background: transparent;
-  width: 15px;
-  height: 8px;
+  width: 47%;
+  height: 25%;
   border: 4px white solid;
   border-top: none;
   border-right: none;
-  top: 9px;
-  left: 7px;
+  top: 30%;
+  left: 22%;
   transform: rotate(-45deg);
 }
 
@@ -81,4 +81,31 @@
   padding: 13px; /*(50-24)/2*/
   line-height: 24px;
   font-size: 20px;
+}
+
+@media(max-width: 400px) {
+  .App {
+    margin: 0 15px;
+  }
+  
+  .bottom {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 10px 15px;
+  }
+    
+  .genderList .genderEntry div.label {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px;
+  } 
+  .genderList .genderEntry div.radioButton {
+    flex: 0 0 30px;
+    height: 30px;
+    border-width: 2px;
+  }
+  
+  .genderList .genderEntry div.radioButton.checked::after {
+    border-width: 3px
+  }
 }

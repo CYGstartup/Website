@@ -3,10 +3,30 @@ import RadioButton from './RadioButton';
 
 class GenderEntry extends Component {
   
+  constructor(props) {
+    super(props);
+    this.state = {
+      classes: []
+    }
+    this.click = this.click.bind(this);
+  }
+  
+  click(e) {
+    if (this.props.available) {
+      this.props.select(e, this.props.name);
+    } else {
+      let classes = this.state.classes;
+      classes = classes.concat(['animated', 'hinge']);
+      this.setState({
+        classes: classes
+      });
+    }
+  }
+  
 	render() {
-		const {name, available, select, selected} = this.props;
+		const {name, available, selected} = this.props;
     
-    let classNameArray = ['genderEntry'];
+    let classNameArray = this.state.classes.concat(['genderEntry']);
     
     if (selected)
       classNameArray.push('selected');
@@ -16,7 +36,7 @@ class GenderEntry extends Component {
     const classNames = classNameArray.join(' ');
     
     return (
-			<div className={classNames} onClick={(e) => {available && select(e, name)}}>
+			<div className={classNames} onClick={this.click}>
         <RadioButton checked={selected}/>
 				<div className="label">{name}</div>
 			</div>

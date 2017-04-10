@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import GenderList from './GenderList';
+
+// CSS
+import './animate.css';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="top">
-          <h2>Welcome to Choose Your Gender pre-alpha v0.0.5</h2>
+          <h2>Welcome to Choose Your Gender pre-alpha v0.1.4</h2>
           <p>Please choose your gender.</p>
           <GenderList />
         </div>
