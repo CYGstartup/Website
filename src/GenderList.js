@@ -17,11 +17,16 @@ class GenderList extends Component {
   }
   
   render() {
-    const genders = [
+    let genders = [
       {name: 'female', available: true},
       {name: 'male', available: true},
       {name: 'others', available: false}
     ];
+    
+    //qutebrowser easter egg
+    if (navigator.userAgent.indexOf('qutebrowser') !== -1) {
+      genders = [{ name: 'you are a hairy, browser', available: true }].concat(genders.map(g => { return { name: g.name, available: false }} ));
+    }
     
     return (
       <div className="genderList">

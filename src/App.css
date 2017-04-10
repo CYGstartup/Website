@@ -3,12 +3,20 @@
 }
 
 .App {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+}
+
+.title {
+  font-family: 'Raleway', sans-serif;
+}
+
+.title .version {
+  font-size: 0.7em;
 }
 
 .bottom {
@@ -30,6 +38,11 @@
   border: 1px solid black;
   margin-top: -1px;
   cursor: pointer;
+  position: relative;
+}
+
+.genderList .genderEntry.animated {
+  z-index: 100;
 }
 
 .genderList .genderEntry:first-child {

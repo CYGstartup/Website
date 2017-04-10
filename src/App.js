@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="top">
-          <h2>Welcome to Choose Your Gender pre-alpha v0.1.4</h2>
+          <h1 className="title">Choose Your Gender <span className="version">pre-alpha v0.1.4</span></h1>
           <p>Please choose your gender.</p>
           <GenderList />
         </div>
