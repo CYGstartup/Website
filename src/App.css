@@ -28,12 +28,12 @@
 .genderList .genderEntry {
   display: flex;
   border: 1px solid black;
-  border-top: none;
+  margin-top: -1px;
   cursor: pointer;
 }
 
 .genderList .genderEntry:first-child {
-  border-top: 1px solid black;
+  margin-top: 0;
 }
 
 .genderList .genderEntry.selected {
