@@ -6,7 +6,7 @@ class GenderEntry extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      classes: []
+      classes: new Set()
     }
     this.click = this.click.bind(this);
   }
@@ -16,7 +16,7 @@ class GenderEntry extends Component {
       this.props.select(e, this.props.name);
     } else {
       let classes = this.state.classes;
-      classes = classes.concat(['animated', 'hinge']);
+      classes = classes.add('animated').add('hinge');
       this.setState({
         classes: classes
       });
@@ -26,7 +26,7 @@ class GenderEntry extends Component {
 	render() {
 		const {name, available, selected} = this.props;
     
-    let classNameArray = this.state.classes.concat(['genderEntry']);
+    let classNameArray = Array.from(this.state.classes).concat(['genderEntry']);
     
     if (selected)
       classNameArray.push('selected');

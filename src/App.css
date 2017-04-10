@@ -1,3 +1,7 @@
+#root {
+  overflow-y: hidden;
+}
+
 .App {
   font-family: sans-serif;
   margin: 0 30px;
